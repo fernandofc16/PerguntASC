@@ -13,7 +13,7 @@ import fexus.com.br.perguntasc.fragments.Resume;
 
 public class TabsAdapterQuestionsModuleASC extends FragmentPagerAdapter {
 
-    private String[] titles = {" Caso  ", "  Q1   ", "  Q2   ", "Análise", " Resumo"};
+    private String[] titles = {"   Caso  ", "Questão 1", "Questão 2"};
     public static boolean question1Answered = false, question2Answered = false;
 
     public TabsAdapterQuestionsModuleASC(FragmentManager fm) {
@@ -33,12 +33,6 @@ public class TabsAdapterQuestionsModuleASC extends FragmentPagerAdapter {
                 break;
             case 2:
                 frag = new Question2();
-                break;
-            case 3:
-                frag = new Analysis();
-                break;
-            case 4:
-                frag = new Resume();
                 break;
         }
 
