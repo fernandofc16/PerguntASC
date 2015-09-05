@@ -1,0 +1,27 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fexus.com.br.perguntasc.fragments.Question1"
+    android:background="#009999"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Questão 1"
+        android:textSize="70dp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/answerButtonQ1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Resposta"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
