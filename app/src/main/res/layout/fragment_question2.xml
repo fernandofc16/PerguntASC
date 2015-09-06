@@ -6,23 +6,22 @@
     tools:context="fexus.com.br.perguntasc.fragments.Question2"
     android:background="#009999"
     android:orientation="vertical"
-    android:gravity="center">
+    android:padding="7dp">
 
     <TextView
+        android:id="@+id/question2Text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Questão 2"
-        android:textSize="70dp"
-        android:layout_gravity="center"
-        android:textColor="@color/white"
-        android:layout_marginBottom="50dp"/>
+        android:textSize="25dp"
+        android:layout_gravity="top|left"
+        android:textColor="@color/white"/>
 
-    <Button
-        android:id="@+id/answerButtonQ2"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/question2List"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Resposta"
-        android:layout_gravity="center"/>
+        android:padding="5dp"/>
 
 </LinearLayout>
 
