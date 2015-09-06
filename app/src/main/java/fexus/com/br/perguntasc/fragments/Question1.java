@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fexus.com.br.perguntasc.R;
+import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
 import fexus.com.br.perguntasc.adapters.RecyclerViewQuestion1;
 import fexus.com.br.perguntasc.extras.InformationQuestion1;
 
@@ -27,14 +28,13 @@ import fexus.com.br.perguntasc.extras.InformationQuestion1;
  */
 public class Question1 extends Fragment {
 
-    boolean alreadyAsnwered;
+    static boolean answered = false;
+    static int answer = 0;
     static String[] asnwers = {"Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"};
     static int[] numbers = {1, 2, 3, 4};
-    static ArrayList<Boolean> selected = new ArrayList<>();
 
     public Question1() {
         // Required empty public constructor
-        resetListSelected();
     }
 
     @Override
@@ -61,16 +61,22 @@ public class Question1 extends Fragment {
 
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(getActivity(), "onClick " + position, Toast.LENGTH_SHORT).show();
-                LinearLayout linearLayout = (LinearLayout) layout.findViewById(R.id.layoutQuestion1);
-                if(alreadyAsnwered) {
-                    resetListSelected();
-                    selected.set(position, true);
-                    alreadyAsnwered = false;
+                LinearLayout answerColor = (LinearLayout) view.findViewById(R.id.layoutQuestion1);
+                if(answered) {
+                    if (answer != (position + 1)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Apenas uma resposta pode ser selecionada por questão", Toast.LENGTH_SHORT).show();
+                    } else {
+                        answerColor.setBackgroundColor(Color.parseColor("#006060"));
+                        answered = false;
+                        answer = 0;
+                    }
                 } else {
-                    selected.set(position, true);
-                    alreadyAsnwered = true;
+                    answerColor.setBackgroundColor(Color.parseColor("#006099"));
+                    answered = true;
+                    answer = position + 1;
                 }
+                ModuleAscQuizActivity1.answer1 = answer;
+                ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
             }
 
             @Override
@@ -96,7 +102,6 @@ public class Question1 extends Fragment {
             InformationQuestion1 current = new InformationQuestion1();
             current.number = numbers[i];
             current.answer = asnwers[i];
-            current.selected = selected.get(i);
             data.add(current);
         }
 
@@ -155,10 +160,4 @@ public class Question1 extends Fragment {
 
     }
 
-    public void resetListSelected() {
-        selected.clear();
-        for(int i = 0; i < 4; i++) {
-            selected.add(false);
-        }
-    }
 }

@@ -20,5 +20,6 @@
     <string name="title_activity_module_asc">ModuleAscActivity</string>
     <string name="title_activity_module_asc_quiz">ModuleAscQuizActivity</string>
     <string name="title_activity_perfil_editor">PerfilEditor</string>
+    <string name="title_activity_module_asc_quiz2">ModuleAscQuizActivity2</string>
 
 </resources>

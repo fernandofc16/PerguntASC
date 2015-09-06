@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fexus.com.br.perguntasc.R;
+import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
 import fexus.com.br.perguntasc.adapters.RecyclerViewQuestion2;
 import fexus.com.br.perguntasc.extras.InformationQuestion2;
 
@@ -27,6 +28,10 @@ import fexus.com.br.perguntasc.extras.InformationQuestion2;
  */
 public class Question2 extends Fragment {
 
+    static boolean answered = false;
+    static int answer = 0;
+    static String[] asnwers = {"Resposta 1", "Resposta 2"};
+    static int[] numbers = {1, 2};
 
     public Question2() {
         // Required empty public constructor
@@ -51,9 +56,22 @@ public class Question2 extends Fragment {
 
             @Override
             public void onClick(View view, int position) {
-                Toast.makeText(getActivity(), "onClick " + position, Toast.LENGTH_SHORT).show();
-                LinearLayout layout = (LinearLayout) view.findViewById(R.id.layoutQuestion2);
-                layout.setBackgroundColor(Color.parseColor("#006099"));
+                LinearLayout answerColor = (LinearLayout) view.findViewById(R.id.layoutQuestion2);
+                if(answered) {
+                    if (answer != (position + 1)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Apenas uma resposta pode ser selecionada por questão", Toast.LENGTH_SHORT).show();
+                    } else {
+                        answerColor.setBackgroundColor(Color.parseColor("#006060"));
+                        answered = false;
+                        answer = 0;
+                    }
+                } else {
+                    answerColor.setBackgroundColor(Color.parseColor("#006099"));
+                    answered = true;
+                    answer = position + 1;
+                }
+                ModuleAscQuizActivity1.answer2 = answer;
+                ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
             }
 
             @Override
@@ -75,9 +93,6 @@ public class Question2 extends Fragment {
     public static List<InformationQuestion2> getData() {
 
         List<InformationQuestion2> data = new ArrayList<>();
-
-        String[] asnwers = {"Resposta 1", "Resposta 2"};
-        int[] numbers = {1, 2};
 
         for(int i=0; i < asnwers.length && i < numbers.length; i++) {
             InformationQuestion2 current = new InformationQuestion2();

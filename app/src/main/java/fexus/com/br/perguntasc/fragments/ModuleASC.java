@@ -18,7 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fexus.com.br.perguntasc.R;
-import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity;
+import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
+import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity2;
 import fexus.com.br.perguntasc.adapters.RecyclerViewModuleASC;
 import fexus.com.br.perguntasc.extras.InformationModuleASC;
 
@@ -51,8 +52,9 @@ public class ModuleASC extends Fragment {
             @Override
             public void onClick(View view, int position) {
                 Toast.makeText(getActivity(), "onClick " + position, Toast.LENGTH_SHORT).show();
-                ModuleAscQuizActivity.caseName = names[position];
-                startActivity(new Intent(getActivity().getBaseContext(), ModuleAscQuizActivity.class));
+                ModuleAscQuizActivity1.caseName = names[position];
+                ModuleAscQuizActivity2.caseName = names[position];
+                startActivity(new Intent(getActivity().getBaseContext(), ModuleAscQuizActivity1.class));
             }
 
             @Override

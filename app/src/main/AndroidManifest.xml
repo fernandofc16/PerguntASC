@@ -39,7 +39,7 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".activitys.ModuleAscQuizActivity"
+            android:name=".activitys.ModuleAscQuizActivity1"
             android:exported="true"
             android:label="@string/title_activity_module_asc_quiz"
             android:screenOrientation="portrait" >
@@ -52,6 +52,10 @@
         <activity
             android:name=".activitys.PerfilEditor"
             android:label="@string/title_activity_perfil_editor" >
+        </activity>
+        <activity
+            android:name=".activitys.ModuleAscQuizActivity2"
+            android:label="@string/title_activity_module_asc_quiz2" >
         </activity>
     </application>
 
