@@ -1,17 +1,23 @@
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fexus.com.br.perguntasc.fragments.Analysis"
-    android:background="@color/green">
+    android:background="#009999"
+    android:orientation="vertical"
+    android:padding="7dp">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Análise"
-        android:textSize="70dp"
-        android:layout_gravity="center"
-        android:textColor="@color/white"/>
+        android:id="@+id/analysisText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="ANALISE"
+        android:textSize="15sp"
+        android:scrollbars="vertical"
+        android:textColor="@color/white"
+        android:gravity="left|center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"/>
 
-</FrameLayout>
+</LinearLayout>

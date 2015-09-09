@@ -39,6 +39,7 @@ public class RecyclerViewQuestion2 extends RecyclerView.Adapter<RecyclerViewQues
         InformationQuestion2 currentInformationQuestion2 = data.get(position);
         holder.number.setText(String.valueOf(currentInformationQuestion2.number) + ")  ");
         holder.text.setText(currentInformationQuestion2.answer);
+        holder.isCorrect = currentInformationQuestion2.isCorrect;
 
     }
 
@@ -50,6 +51,7 @@ public class RecyclerViewQuestion2 extends RecyclerView.Adapter<RecyclerViewQues
     class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView number, text;
+        boolean isCorrect;
 
         public MyViewHolder(View itemView) {
             super(itemView);

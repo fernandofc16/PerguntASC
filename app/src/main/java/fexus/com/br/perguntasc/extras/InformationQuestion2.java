@@ -6,5 +6,5 @@ package fexus.com.br.perguntasc.extras;
 public class InformationQuestion2 {
     public String answer;
     public int number;
-    public boolean selected;
+    public boolean isCorrect;
 }

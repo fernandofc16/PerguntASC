@@ -13,7 +13,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,9 +31,18 @@ import fexus.com.br.perguntasc.extras.InformationQuestion1;
  */
 public class Question1 extends Fragment {
 
-    static boolean answered = false;
-    static int answer = 0;
-    static String[] asnwers = {"Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4"};
+    static boolean answered;
+    static int answer;
+
+    static String[] asnwers = {"Universalidade, equidade, participação popular",
+                               "Universalidade, participação popular, descentralização administrativa",
+                               "Igualdade, participação popular, centralização administrativa",
+                               "Equidade, regionalização, integralidade visando ações preventivas"};
+
+    static String question1 = "Como toda instituição, o SUS também tem seus princípios, que devem valer em todo o país. Qual das alternativas abaixo contém itens que NÃO são princípios do SUS?";
+    static TextView question1View;
+
+    static boolean[] correctAnswer = { false, false, true, false };
     static int[] numbers = {1, 2, 3, 4};
 
     public Question1() {
@@ -40,6 +52,8 @@ public class Question1 extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        answer = 0;
+        answered = false;
     }
 
     @Override
@@ -48,6 +62,10 @@ public class Question1 extends Fragment {
         // Inflate the layout for this fragment
 
         final View layout = inflater.inflate(R.layout.fragment_question1, container, false);
+
+        question1View = (TextView) layout.findViewById(R.id.question1Text);
+
+        question1View.setText(question1);
 
         RecyclerView recyclerView = (RecyclerView) layout.findViewById(R.id.question1List);
 
@@ -74,9 +92,9 @@ public class Question1 extends Fragment {
                     answerColor.setBackgroundColor(Color.parseColor("#006099"));
                     answered = true;
                     answer = position + 1;
+                    ModuleAscQuizActivity1.answer1 = answer;
+                    ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
                 }
-                ModuleAscQuizActivity1.answer1 = answer;
-                ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
             }
 
             @Override

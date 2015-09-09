@@ -13,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -28,21 +29,37 @@ import fexus.com.br.perguntasc.extras.InformationQuestion2;
  */
 public class Question2 extends Fragment {
 
-    static boolean answered = false;
-    static int answer = 0;
-    static String[] asnwers = {"Resposta 1", "Resposta 2"};
+    static boolean answered;
+    static int answer;
+
+    static String[] asnwers = {"Embora seja diretriz constitucional, a participação da comunidade no SUS ainda não foi implantada, devido às dificuldades de financiamento",
+                               "A participação da comunidade no SUS é feita por meio das Conferências e Conselhos de Saúde, nos níveis nacional, estaduais, municipais"};
+
+    static String question2 = "Declaração de Alma-Ata, promulgada pela Organização Mundial de Saúde (OMS) em 1978, afirma que as ações primárias de saúde pressupõem a participação da comunidade em seu planejamento, organização, execução e controle. Com base nos princípios e no funcionamento atual do SUS:";
+    static TextView question2View;
+
     static int[] numbers = {1, 2};
 
     public Question2() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        answer = 0;
+        answered = false;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.fragment_question2, container, false);
+
+        question2View = (TextView) layout.findViewById(R.id.question2Text);
+
+        question2View.setText(question2);
 
         RecyclerView recyclerView = (RecyclerView) layout.findViewById(R.id.question2List);
 
@@ -69,9 +86,9 @@ public class Question2 extends Fragment {
                     answerColor.setBackgroundColor(Color.parseColor("#006099"));
                     answered = true;
                     answer = position + 1;
+                    ModuleAscQuizActivity1.answer2 = answer;
+                    ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
                 }
-                ModuleAscQuizActivity1.answer2 = answer;
-                ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
             }
 
             @Override
