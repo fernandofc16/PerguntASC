@@ -21,6 +21,7 @@ import java.util.List;
 
 import fexus.com.br.perguntasc.R;
 import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
+import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity2;
 import fexus.com.br.perguntasc.adapters.RecyclerViewQuestion2;
 import fexus.com.br.perguntasc.extras.InformationQuestion2;
 
@@ -81,6 +82,9 @@ public class Question2 extends Fragment {
                         answerColor.setBackgroundColor(Color.parseColor("#006060"));
                         answered = false;
                         answer = 0;
+                        ModuleAscQuizActivity1.answer2 = answer;
+                        //Toast.makeText(getActivity(), "answer2: " + answer, Toast.LENGTH_SHORT).show();
+
                     }
                 } else {
                     answerColor.setBackgroundColor(Color.parseColor("#006099"));
@@ -88,6 +92,7 @@ public class Question2 extends Fragment {
                     answer = position + 1;
                     ModuleAscQuizActivity1.answer2 = answer;
                     ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
+                    //Toast.makeText(getActivity(), "answer2: " + answer, Toast.LENGTH_SHORT).show();
                 }
             }
 

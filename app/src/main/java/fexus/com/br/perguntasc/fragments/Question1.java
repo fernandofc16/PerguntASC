@@ -87,6 +87,8 @@ public class Question1 extends Fragment {
                         answerColor.setBackgroundColor(Color.parseColor("#006060"));
                         answered = false;
                         answer = 0;
+                        ModuleAscQuizActivity1.answer1 = answer;
+                        //Toast.makeText(getActivity(), "answer1: " + answer, Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     answerColor.setBackgroundColor(Color.parseColor("#006099"));
@@ -94,6 +96,7 @@ public class Question1 extends Fragment {
                     answer = position + 1;
                     ModuleAscQuizActivity1.answer1 = answer;
                     ModuleAscQuizActivity1.checkQuestionsAnswered(getActivity().getApplicationContext());
+                    //Toast.makeText(getActivity(), "answer1: " + answer, Toast.LENGTH_SHORT).show();
                 }
             }
 

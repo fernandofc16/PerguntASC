@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="RESUMO"
-        android:textSize="15sp"
+        android:textSize="@dimen/textSize"
         android:scrollbars="vertical"
         android:textColor="@color/white"
         android:gravity="left|center"

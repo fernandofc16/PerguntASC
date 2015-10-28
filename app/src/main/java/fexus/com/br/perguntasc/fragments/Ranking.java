@@ -56,8 +56,8 @@ public class Ranking extends Fragment {
         List<InformationRanking> data = new ArrayList<>();
 
         String[] positions = { "1º ", "2º ", "3º ", "4º ", "5º ", "6º ", "7º ", "8º ", "9º ", "10º" };
-        String[] profilePicturesId = { "777637332331539", "892473870815110", "100001214976629", "1766424992", "1411025269", "100002727294468", "100000883164741", "1547204626", "100002187255916", "623439890" };
-        String[] names = { "Fernando Ferreira", "Sandra Ferreira", "Frederico Vilela", "Lívia Ciabati", "Sarah Guadagnin", "Gabriela Lobato", "Thais Helena de Paula", "William Dias Ferreira", "José Carlos Moraes", "Miki Nakamura" };
+        String[] profilePicturesId = { Login.profile.getId(), "", "", "", "", "", "", "", "", "" };
+        String[] names = { Login.profile.getName(), "Pessoa 2", "Pessoa 3", "Pessoa 4", "Pessoa 5", "Pessoa 6", "Pessoa 7", "Pessoa 8", "Pessoa 9", "Pessoa 10" };
         String[] scores = { "500", "400", "300", "200", "100", "50", "40", "30", "20", "10" };
 
         for(int i=0; i < names.length && i < scores.length && i < profilePicturesId.length; i++) {
