@@ -30,6 +30,7 @@ import java.io.IOException;
 import fexus.com.br.perguntasc.R;
 import fexus.com.br.perguntasc.adapters.TabsAdapterMain;
 import fexus.com.br.perguntasc.database.DatabaseDrawableHandler;
+import fexus.com.br.perguntasc.extras.MyApplication;
 import fexus.com.br.perguntasc.extras.SlidingTabLayout;
 import fexus.com.br.perguntasc.fragments.Login;
 

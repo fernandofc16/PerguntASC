@@ -25,13 +25,13 @@ public class MyApplication extends Application {
     public void printHashKey() {
 
         try {
-            PackageInfo info = getPackageManager().getPackageInfo(
+            PackageInfo info = getApplicationContext().getPackageManager().getPackageInfo(
                     "fexus.com.br.perguntasc",
                     PackageManager.GET_SIGNATURES);
             for (Signature signature : info.signatures) {
                 MessageDigest md = MessageDigest.getInstance("SHA");
                 md.update(signature.toByteArray());
-                Log.e("FEXUS:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+                Log.d("KeyHash: ", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
         } catch (PackageManager.NameNotFoundException e) {
 
