@@ -16,13 +16,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import fexus.com.br.perguntasc.R;
-import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
+import fexus.com.br.perguntasc.activities.ModuleAscQuizActivity1;
 import fexus.com.br.perguntasc.adapters.RecyclerViewQuestion1;
 import fexus.com.br.perguntasc.extras.InformationQuestion1;
 

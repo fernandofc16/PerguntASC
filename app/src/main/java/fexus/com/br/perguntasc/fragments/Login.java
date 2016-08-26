@@ -20,11 +20,13 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.login.widget.ProfilePictureView;
 
 import fexus.com.br.perguntasc.R;
+import fexus.com.br.perguntasc.activities.MainActivity;
 
 
 /**
@@ -55,9 +57,9 @@ public class Login extends Fragment {
                     //AccessToken accessToken = loginResult.getAccessToken();
                     setProfile();
 
-                    startActivity(new Intent("android.intent.action.Logged"));
+                    startActivity(new Intent(getActivity(), MainActivity.class));
                     button_login_back.setVisibility(View.VISIBLE);
-                    getActivity().finish();
+
                 //}
             }
 
@@ -115,10 +117,10 @@ public class Login extends Fragment {
         super.onCreate(savedInstanceState);
 
         FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
+        AppEventsLogger.activateApp(getActivity());
 
         mCallbackManager = CallbackManager.Factory.create();
         mTokenTracker = new AccessTokenTracker() {
-
             @Override
             protected void onCurrentAccessTokenChanged(AccessToken oldToken, AccessToken newToken) {
                 Log.w("FEXUS", "PASSOU NO ACCESSTOKENTRACKER");

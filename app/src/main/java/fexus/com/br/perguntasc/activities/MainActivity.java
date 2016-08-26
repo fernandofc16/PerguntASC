@@ -2,7 +2,7 @@
  *  Created by Fernando Ferreira Cunha
  */
 
-package fexus.com.br.perguntasc.activitys;
+package fexus.com.br.perguntasc.activities;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.FacebookSdk;
+import com.facebook.login.LoginManager;
 import com.facebook.login.widget.ProfilePictureView;
 
 import java.io.IOException;
@@ -30,7 +31,6 @@ import java.io.IOException;
 import fexus.com.br.perguntasc.R;
 import fexus.com.br.perguntasc.adapters.TabsAdapterMain;
 import fexus.com.br.perguntasc.database.DatabaseDrawableHandler;
-import fexus.com.br.perguntasc.extras.MyApplication;
 import fexus.com.br.perguntasc.extras.SlidingTabLayout;
 import fexus.com.br.perguntasc.fragments.Login;
 
@@ -150,8 +150,8 @@ public class MainActivity extends AppCompatActivity {
                 // and then performing relevant action.
 
                 switch (menuItem.getItemId()){
-                    case R.id.login:
-                        startActivity(new Intent(getBaseContext(), LoginActivity.class));
+                    case R.id.logout:
+                        LoginManager.getInstance().logOut();
                         finish();
                         return true;
                     case R.id.item1:

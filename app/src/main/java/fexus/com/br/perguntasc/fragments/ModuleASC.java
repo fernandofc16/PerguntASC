@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fexus.com.br.perguntasc.R;
-import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity1;
-import fexus.com.br.perguntasc.activitys.ModuleAscQuizActivity2;
+import fexus.com.br.perguntasc.activities.ModuleAscQuizActivity1;
+import fexus.com.br.perguntasc.activities.ModuleAscQuizActivity2;
 import fexus.com.br.perguntasc.adapters.RecyclerViewModuleASC;
 import fexus.com.br.perguntasc.extras.InformationModuleASC;
 

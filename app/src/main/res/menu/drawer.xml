@@ -19,8 +19,8 @@
             android:title="Editar Perfil"
             android:icon="@drawable/profile_editor"/>
 
-        <item android:id="@+id/login"
-            android:title="Back to Login"
+        <item android:id="@+id/logout"
+            android:title="Logout"
             android:icon="@drawable/login_icon"/>
 
     </group>

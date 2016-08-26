@@ -14,7 +14,7 @@
             android:value="@string/facebook_app_id" />
 
         <activity
-            android:name=".activitys.LoginActivity"
+            android:name=".activities.LoginActivity"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true"
             android:label="Main Activity"
             android:screenOrientation="portrait" >
@@ -39,7 +39,7 @@
             android:label="@string/app_name"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
-            android:name=".activitys.ModuleAscQuizActivity1"
+            android:name=".activities.ModuleAscQuizActivity1"
             android:exported="true"
             android:label="@string/title_activity_module_asc_quiz"
             android:screenOrientation="portrait" >
@@ -50,11 +50,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activitys.PerfilEditor"
+            android:name=".activities.PerfilEditor"
             android:label="@string/title_activity_perfil_editor" >
         </activity>
         <activity
-            android:name=".activitys.ModuleAscQuizActivity2"
+            android:name=".activities.ModuleAscQuizActivity2"
             android:label="@string/title_activity_module_asc_quiz2" >
         </activity>
     </application>

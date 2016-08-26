@@ -1,4 +1,4 @@
-package fexus.com.br.perguntasc.activitys;
+package fexus.com.br.perguntasc.activities;
 
 import android.app.Activity;
 import android.content.Context;
