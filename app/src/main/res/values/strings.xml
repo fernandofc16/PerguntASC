@@ -22,4 +22,8 @@
     <string name="title_activity_perfil_editor">PerfilEditor</string>
     <string name="title_activity_module_asc_quiz2">ModuleAscQuizActivity2</string>
 
+    <string name="login_name">Nome</string>
+    <string name="login_connected">Conectado</string>
+    <string name="login_disconnected">Desconectado</string>
+
 </resources>

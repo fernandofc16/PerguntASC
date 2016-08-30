@@ -38,6 +38,7 @@ public class Question2 extends Fragment {
     static String question2 = "Declaração de Alma-Ata, promulgada pela Organização Mundial de Saúde (OMS) em 1978, afirma que as ações primárias de saúde pressupõem a participação da comunidade em seu planejamento, organização, execução e controle. Com base nos princípios e no funcionamento atual do SUS:";
     static TextView question2View;
 
+    static boolean[] correctAnswer = { false, false, true, false };
     static int[] numbers = {1, 2};
 
     public Question2() {
@@ -117,8 +118,9 @@ public class Question2 extends Fragment {
 
         for(int i=0; i < asnwers.length && i < numbers.length; i++) {
             InformationQuestion2 current = new InformationQuestion2();
-            current.number = numbers[i];
-            current.answer = asnwers[i];
+            current.setNumber(numbers[i]);
+            current.setAnswer(asnwers[i]);
+            current.setCorrect(correctAnswer[i]);
             data.add(current);
         }
 
@@ -144,7 +146,7 @@ public class Question2 extends Fragment {
                     View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
 
                     if(child != null && clickListener != null) {
-                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+                        clickListener.onLongClick(child, recyclerView.getChildAdapterPosition(child));
                     }
                 }
             });
@@ -155,7 +157,7 @@ public class Question2 extends Fragment {
 
             View child = rv.findChildViewUnder(e.getX(), e.getY());
             if(child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child));
+                clickListener.onClick(child, rv.getChildAdapterPosition(child));
             }
             return false;
         }
@@ -170,9 +172,9 @@ public class Question2 extends Fragment {
 
         }
 
-        public static interface ClickListener {
-            public void onClick(View view, int position);
-            public void onLongClick(View view, int position);
+        public interface ClickListener {
+            void onClick(View view, int position);
+            void onLongClick(View view, int position);
         }
 
     }

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,17 +49,12 @@ public class Login extends Fragment {
 
             @Override
             public void onSuccess(LoginResult loginResult) {
-                //if(profile.getName() == userName) {
-                    //startActivity(new Intent("android.intent.action.Logged"));
-                //} else {
-                    Log.e("FEXUS", "PASSOU NO ONSUCCESS");
-                    //AccessToken accessToken = loginResult.getAccessToken();
-                    setProfile();
+                Log.e("FEXUS", "PASSOU NO ONSUCCESS");
 
-                    startActivity(new Intent(getActivity(), MainActivity.class));
-                    button_login_back.setVisibility(View.VISIBLE);
+                setProfile();
 
-                //}
+                startActivity(new Intent(getActivity(), MainActivity.class));
+                button_login_back.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -78,10 +72,6 @@ public class Login extends Fragment {
 
     }
 
-    public Login() {
-
-    }
-
     public void setProfile() {
 
             profile = Profile.getCurrentProfile();
@@ -96,7 +86,7 @@ public class Login extends Fragment {
                     userId = profile.getId();
                 }
 
-                connectedText.setText("Conectado");
+                connectedText.setText(R.string.login_connected);
                 connectedText.setTextColor(getResources().getColor(R.color.green));
                 loginProfilePicture.setProfileId(userId);
                 loginName.setText(userName);
@@ -105,10 +95,10 @@ public class Login extends Fragment {
                 button_login_back.setVisibility(View.GONE);
                 userName = null;
                 userId = null;
-                connectedText.setText("Desconectado");
+                connectedText.setText(R.string.login_disconnected);
                 connectedText.setTextColor(getResources().getColor(R.color.red));
                 loginProfilePicture.setProfileId("");
-                loginName.setText("Nome");
+                loginName.setText(R.string.login_name);
             }
     }
 

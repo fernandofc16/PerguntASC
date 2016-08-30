@@ -1,7 +1,3 @@
-/**
- * Created by Fernando on 09/06/2015.
- */
-
 package fexus.com.br.perguntasc.adapters;
 
 import android.content.Context;
@@ -42,16 +38,16 @@ public class RecyclerViewModuleASC extends RecyclerView.Adapter<RecyclerViewModu
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        InformationModuleASC currentInformationRanking = data.get(position);
-        holder.text.setText(currentInformationRanking.name);
+        InformationModuleASC currentInformationRanking = data.get(holder.getAdapterPosition());
+        holder.text.setText(currentInformationRanking.getName());
 
-        if(position > previousPosition) {
+        if(holder.getAdapterPosition() > previousPosition) {
             AnimationUtils.animate(holder, true);
         } else {
             AnimationUtils.animate(holder, false);
         }
 
-        previousPosition = position;
+        previousPosition = holder.getAdapterPosition();
 
     }
 

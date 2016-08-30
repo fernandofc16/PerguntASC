@@ -37,9 +37,9 @@ public class RecyclerViewQuestion2 extends RecyclerView.Adapter<RecyclerViewQues
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
         InformationQuestion2 currentInformationQuestion2 = data.get(position);
-        holder.number.setText(String.valueOf(currentInformationQuestion2.number) + ")  ");
-        holder.text.setText(currentInformationQuestion2.answer);
-        holder.isCorrect = currentInformationQuestion2.isCorrect;
+        holder.number.setText(String.valueOf(currentInformationQuestion2.getNumber()).concat(")  "));
+        holder.text.setText(currentInformationQuestion2.getAnswer());
+        holder.isCorrect = currentInformationQuestion2.isCorrect();
 
     }
 

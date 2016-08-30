@@ -62,10 +62,10 @@ public class Ranking extends Fragment {
 
         for(int i=0; i < names.length && i < scores.length && i < profilePicturesId.length; i++) {
             InformationRanking current = new InformationRanking();
-            current.name = names[i];
-            current.score = scores[i];
-            current.profilePictureId = profilePicturesId[i];
-            current.position = positions[i];
+            current.setName(names[i]);
+            current.setScore(scores[i]);
+            current.setProfilePictureId(profilePicturesId[i]);
+            current.setPosition(positions[i]);
             data.add(current);
         }
 

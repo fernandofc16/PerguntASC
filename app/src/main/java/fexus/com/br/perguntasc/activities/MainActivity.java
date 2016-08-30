@@ -119,15 +119,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if ((userFirstName.length() + userSecondName.length() + userThirdName.length()) < 22) {
-            userHeadName.setText(userFirstName + " " + userSecondName + " " + userThirdName);
+            userHeadName.setText(userFirstName.concat(" ").concat(userSecondName).concat(" ").concat(userThirdName));
         } else if ((userFirstName.length() + userThirdName.length()) < 20) {
-            userHeadName.setText(userFirstName + " " + userSecondNameChars[0] + ". " + userThirdName);
+            userHeadName.setText(userFirstName.concat(" ").concat(String.valueOf(userSecondNameChars != null ? userSecondNameChars[0] : 0)).concat(". ").concat(userThirdName));
         } else {
-            userHeadName.setText(userFirstName + " " + userSecondNameChars[0] + ". " + userThirdNameChars[0]);
+            userHeadName.setText(userFirstName.concat(" ").concat(String.valueOf(userSecondNameChars != null ? userSecondNameChars[0] : 0)).concat(". ").concat(String.valueOf(userThirdNameChars != null ? userThirdNameChars[0] : 0)));
         }
 
         TextView userHeadScore = (TextView) findViewById(R.id.text_drawer_score_position);
-        userHeadScore.setText(userScore + "  |  " + userPosition);
+        userHeadScore.setText(userScore.concat("  |  ").concat(userPosition));
 
         //Ranking
         if (drawerLayout == null) {

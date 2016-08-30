@@ -6,16 +6,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import fexus.com.br.perguntasc.fragments.Analysis;
-import fexus.com.br.perguntasc.fragments.Cases;
 import fexus.com.br.perguntasc.fragments.Performance;
-import fexus.com.br.perguntasc.fragments.Question1;
-import fexus.com.br.perguntasc.fragments.Question2;
 import fexus.com.br.perguntasc.fragments.Resume;
 
 public class TabsAdapterQuestionsModuleASC2 extends FragmentPagerAdapter {
 
     private String[] titles = {"  Análise ", "  Resumo  ", "Desempenho"};
-    public static boolean question1Answered = false, question2Answered = false;
 
     public TabsAdapterQuestionsModuleASC2(FragmentManager fm) {
         super(fm);

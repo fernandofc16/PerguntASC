@@ -12,7 +12,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * Created by Fernando on 30/05/2015.
+ * Created by Fernando
  */
 public class MyApplication extends Application {
 
@@ -33,10 +33,8 @@ public class MyApplication extends Application {
                 md.update(signature.toByteArray());
                 Log.d("KeyHash: ", Base64.encodeToString(md.digest(), Base64.DEFAULT));
             }
-        } catch (PackageManager.NameNotFoundException e) {
-
-        } catch (NoSuchAlgorithmException e) {
-
+        } catch (PackageManager.NameNotFoundException | NoSuchAlgorithmException e) {
+            e.printStackTrace();
         }
     }
 

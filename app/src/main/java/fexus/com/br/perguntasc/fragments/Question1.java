@@ -25,7 +25,7 @@ import fexus.com.br.perguntasc.adapters.RecyclerViewQuestion1;
 import fexus.com.br.perguntasc.extras.InformationQuestion1;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Created by Fernando
  */
 public class Question1 extends Fragment {
 
@@ -119,8 +119,9 @@ public class Question1 extends Fragment {
 
         for(int i=0; i < asnwers.length && i < numbers.length; i++) {
             InformationQuestion1 current = new InformationQuestion1();
-            current.number = numbers[i];
-            current.answer = asnwers[i];
+            current.setNumber(numbers[i]);
+            current.setAnswer(asnwers[i]);
+            current.setCorrect(correctAnswer[i]);
             data.add(current);
         }
 
@@ -146,7 +147,7 @@ public class Question1 extends Fragment {
                     View child = recyclerView.findChildViewUnder(e.getX(), e.getY());
 
                     if(child != null && clickListener != null) {
-                        clickListener.onLongClick(child, recyclerView.getChildPosition(child));
+                        clickListener.onLongClick(child, recyclerView.getChildAdapterPosition(child));
                     }
                 }
             });
@@ -157,7 +158,7 @@ public class Question1 extends Fragment {
 
             View child = rv.findChildViewUnder(e.getX(), e.getY());
             if(child != null && clickListener != null && gestureDetector.onTouchEvent(e)) {
-                clickListener.onClick(child, rv.getChildPosition(child));
+                clickListener.onClick(child, rv.getChildAdapterPosition(child));
             }
             return false;
         }
@@ -172,9 +173,9 @@ public class Question1 extends Fragment {
 
         }
 
-        public static interface ClickListener {
-            public void onClick(View view, int position);
-            public void onLongClick(View view, int position);
+        public interface ClickListener {
+            void onClick(View view, int position);
+            void onLongClick(View view, int position);
         }
 
     }
